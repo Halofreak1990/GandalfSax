@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,8 +12,6 @@ namespace GandalfSax
         public MainWindow()
         {
             InitializeComponent();
-            RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);        
-            registryKey.SetValue("GandalfSax", System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
 
         private void me_MediaEnded(object sender, RoutedEventArgs e)
