@@ -6,13 +6,19 @@
         xmlns:local="clr-namespace:GandalfSax"
         mc:Ignorable="d"
         Title="Gandalf Sax" Height="350" Width="525" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <VisualBrush x:Key="Media" Stretch="UniformToFill">
+            <VisualBrush.Visual>
+                <MediaElement Source="Assets/gandalfsax.mp4" 
+                              Stretch="UniformToFill" 
+                              MediaEnded="me_MediaEnded" 
+                              x:Name="me" 
+                              VerticalAlignment="Center" 
+                              Volume="1"/>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.Resources>
     <Grid>
-        <MediaElement Source="Assets/gandalfsax.mp4" 
-                      Stretch="UniformToFill" 
-                      MediaEnded="me_MediaEnded" 
-                      x:Name="me" 
-                      VerticalAlignment="Center" 
-                      Volume="1">
-        </MediaElement>
+        <Rectangle Fill="{StaticResource Media}"/>
     </Grid>
 </Window>

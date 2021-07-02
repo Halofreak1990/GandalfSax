@@ -20,11 +20,21 @@ namespace GandalfSax
         {
             if (e.Args.Length == 0 || e.Args[0].ToLower().StartsWith("/s"))
             {
-                foreach (Screen s in Screen.AllScreens)
+                var mainWindow = new MainWindow();
+                var brush = mainWindow.Resources["Media"] as VisualBrush;
+
+                foreach (var s in Screen.AllScreens)
                 {
-                    MainWindow window = new MainWindow();
+                    Window window;
+
                     if (!s.Primary)
-                        window.me.Volume = 0; // only primary will have volume on
+                    {
+                        window = new SecondaryWindow(brush);
+                    }
+                    else
+                    {
+                        window = mainWindow;
+                    }
 
                     window.WindowStartupLocation = WindowStartupLocation.Manual;
                     window.Left                  = s.WorkingArea.Left;

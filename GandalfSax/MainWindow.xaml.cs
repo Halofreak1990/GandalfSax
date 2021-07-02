@@ -30,8 +30,10 @@ namespace GandalfSax
 
         private void me_MediaEnded(object sender, RoutedEventArgs e)
         {
-            me.Position = TimeSpan.FromSeconds(0);
-            me.Play();
+            var mediaElement = sender as MediaElement;
+
+            mediaElement.Position = TimeSpan.FromSeconds(0);
+            mediaElement.Play();
         }
     }
 }
