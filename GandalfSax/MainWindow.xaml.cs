@@ -18,8 +18,7 @@ namespace GandalfSax
         {
             var mediaElement = sender as MediaElement;
 
-            mediaElement.Position = TimeSpan.FromSeconds(0);
-            mediaElement.Play();
+            mediaElement.Position = TimeSpan.FromMilliseconds(1);
         }
     }
 }
