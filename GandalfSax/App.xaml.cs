@@ -31,6 +31,7 @@ namespace GandalfSax
                         window = mainWindow;
                     }
 
+                    window.Background = new SolidColorBrush(Colors.Black);
                     window.WindowStartupLocation = WindowStartupLocation.Manual;
                     window.Left                  = s.WorkingArea.Left;
                     window.Top                   = s.WorkingArea.Top;
