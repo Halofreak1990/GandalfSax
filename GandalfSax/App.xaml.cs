@@ -85,7 +85,7 @@ namespace GandalfSax
 
                 // Make this a child window so it will close when the parent dialog closes
                 // GWL_STYLE = -16, WS_CHILD = 0x40000000
-                NativeMethods.SetWindowLong(helper.Handle, -16, NativeMethods.GetWindowLong(helper.Handle, -16) | 0x40000000);
+                NativeMethods.SetWindowLong(helper.Handle, -16, (long)NativeMethods.GetWindowLong(helper.Handle, -16) | 0x40000000);
             }
             else if (e.Args[0].ToLower().StartsWith("/c")) // configure screensaver
             {

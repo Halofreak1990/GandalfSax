@@ -32,11 +32,16 @@ namespace GandalfSax
 			}
 		}
 
-		[DllImport("user32.dll")]
-		internal static extern bool GetClientRect(IntPtr hWnd, ref Rect lpRect);
+		[SecuritySafeCritical]
+		internal static IntPtr GetWindowLong(IntPtr hWnd, int nIndex)
+		{
+			if (IntPtr.Size == 8)
+			{
+				return GetWindowLongPtr64(hWnd, nIndex);
+			}
 
-		[DllImport("user32.dll", SetLastError = true)]
-		internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+			return new IntPtr(GetWindowLong32(hWnd, nIndex));
+		}
 
 		[DllImport("user32.dll", SetLastError = true)]
 		internal static extern bool GetWindowRect(IntPtr hwnd, out Rect lpRect);
@@ -56,6 +61,12 @@ namespace GandalfSax
 
 			return new IntPtr(SetWindowLong32(hWnd, nIndex, (int)dwNewLong));
 		}
+
+		[DllImport("user32.dll", EntryPoint = "GetWindowLong", SetLastError = true)]
+		private static extern int GetWindowLong32(IntPtr hWnd, int nIndex);
+
+		[DllImport("user32.dll", EntryPoint = "GetWindowLongPtr", SetLastError = true)]
+		private static extern IntPtr GetWindowLongPtr64(IntPtr hWnd, int nIndex);
 
 		[DllImport("user32.dll", EntryPoint = "SetWindowLong")]
 		private static extern int SetWindowLong32(IntPtr hWnd, int nIndex, int dwNewLong);
