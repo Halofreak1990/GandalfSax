@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GandalfSax"
         mc:Ignorable="d"
-        Title="SecondaryWindow" Height="350" Width="525" WindowStyle="None" ResizeMode="NoResize">
+        Title="SecondaryWindow" Height="350" Width="525" WindowStyle="None" ResizeMode="NoResize"
+        KeyDown="OnSecondaryWindowKeyDown"
+        MouseDown="OnSecondaryWindowMouseDown"
+        MouseMove="OnSecondaryWindowMouseMove">
     <Rectangle Name="Display" />
 </Window>
