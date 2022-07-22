@@ -1,4 +1,4 @@
 # GandalfSax
-Full screen Gandalf with sax music. If you rename the .exe to .scr you have a screensaver. Install the screensave with right click the .scr file and choose install.
+Full screen Gandalf with sax music. Comes with both an .exe and .scr file to use as a screensaver. Install the screensaver by right-clicking the .scr file and choosing install.
 
-![Gandalf](http://www.screenprank.com/imgs/gandalfsax.gif)
+![Gandalf](https://thumbs.gfycat.com/RapidScentedBasilisk-small.gif)
