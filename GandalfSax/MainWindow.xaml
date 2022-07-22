@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GandalfSax"
         mc:Ignorable="d"
-        Title="Gandalf Sax" Height="350" Width="525" WindowStyle="None" ResizeMode="NoResize">
+        Title="Gandalf Sax" Height="350" Width="525" WindowStyle="None" ResizeMode="NoResize"
+        KeyDown="OnMainWindowKeyDown"
+        MouseDown="OnMainWindowMouseDown"
+        MouseMove="OnMainWindowMouseMove">
     <Window.Resources>
         <VisualBrush x:Key="Media" Stretch="UniformToFill">
             <VisualBrush.Visual>
@@ -18,7 +21,7 @@
             </VisualBrush.Visual>
         </VisualBrush>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="Grid1">
         <Rectangle Fill="{StaticResource Media}"/>
     </Grid>
 </Window>
