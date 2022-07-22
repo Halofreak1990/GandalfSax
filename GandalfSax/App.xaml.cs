@@ -37,10 +37,11 @@ namespace GandalfSax
                     window.WindowStartupLocation = WindowStartupLocation.Manual;
                     window.Left                  = s.WorkingArea.Left;
                     window.Top                   = s.WorkingArea.Top;
-                    window.WindowState           = WindowState.Maximized;
                     window.ShowInTaskbar         = false;
 
                     window.Show();
+
+                    window.WindowState = WindowState.Maximized;
                 }
             }
             else if (e.Args[0].ToLower().StartsWith("/p")) // preview screensaver
