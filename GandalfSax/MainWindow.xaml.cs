@@ -29,7 +29,7 @@ namespace GandalfSax
 
         private void OnMainWindowKeyDown(object sender, KeyEventArgs e)
         {
-            if (_isPreviewWindow)
+            if (_isPreviewWindow || e.Key == Key.VolumeDown || e.Key == Key.VolumeUp)
             {
                 return;
             }

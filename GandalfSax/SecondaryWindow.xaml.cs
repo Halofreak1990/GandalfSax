@@ -20,6 +20,11 @@ namespace GandalfSax
 
 		private void OnSecondaryWindowKeyDown(object sender, KeyEventArgs e)
 		{
+			if (e.Key == Key.VolumeDown || e.Key == Key.VolumeUp)
+			{
+				return;
+			}
+
 			Application.Current.Shutdown();
 		}
 
